@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Route Optimizer</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&libraries=places"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mb-4">Singapore Route Optimizer</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="location-input" class="form-label">Add Location</label>
+                    <input type="text" class="form-control" id="location-input" placeholder="Enter a location">
+                </div>
+                <button id="add-location" class="btn btn-secondary mb-3">Add Location</button>
+                <ul id="location-list" class="list-group mb-3"></ul>
+                <button id="optimize-route" class="btn btn-primary">Optimize Route</button>
+            </div>
+            <div class="col-md-8">
+                <div id="map" style="height: 400px;"></div>
+                <div id="directions-panel" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
